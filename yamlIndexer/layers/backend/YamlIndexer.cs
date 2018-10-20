@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ymlIndexer.layers.backend
+namespace yamlIndexer.layers.backend
 {
-    class YmlIndexer
+    class YamlIndexer
     {
 
 

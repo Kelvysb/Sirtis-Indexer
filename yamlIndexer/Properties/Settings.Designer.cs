@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ymlIndexer.Properties
+namespace yamlIndexer.Properties
 {
 
 

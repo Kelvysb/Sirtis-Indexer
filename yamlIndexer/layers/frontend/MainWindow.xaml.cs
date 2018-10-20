@@ -13,16 +13,44 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ymlIndexer
+namespace yamlIndexer
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        #region Declarations
+
+        #endregion
+
+        #region Constructor
         public MainWindow()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
+        #endregion
+
+        #region Events
+
+        #endregion
+
+        #region Functions
+
+        #endregion
+
+        #region Properties
+
+        #endregion
+
     }
 }
