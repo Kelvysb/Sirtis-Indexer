@@ -1,2 +1,2 @@
-# ymlIndexer
-yml Indexer with quick plain key search
+# yamlIndexer
+yaml Indexer with quick plain key search
