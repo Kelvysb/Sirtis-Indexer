@@ -102,6 +102,16 @@ namespace SirtisIndexer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap copy {
+            get {
+                object obj = ResourceManager.GetObject("copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap filter {
             get {
                 object obj = ResourceManager.GetObject("filter", resourceCulture);
@@ -126,6 +136,24 @@ namespace SirtisIndexer.Properties {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are unsaved modifications, do you really want to close?.
+        /// </summary>
+        internal static string msgClose {
+            get {
+                return ResourceManager.GetString("msgClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File path copied to clipboard..
+        /// </summary>
+        internal static string msgCopy {
+            get {
+                return ResourceManager.GetString("msgCopy", resourceCulture);
             }
         }
         

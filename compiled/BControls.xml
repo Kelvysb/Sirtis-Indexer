@@ -1,0 +1,71 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BControls
+</name>
+</assembly>
+<members>
+<member name="T:BControls.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BControls.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BControls.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:BControls.My.Resources.Resources.Critical">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:BControls.My.Resources.Resources.Help">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:BControls.My.Resources.Resources.Info">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:BControls.My.Resources.Resources.Ok">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:BControls.My.Resources.Resources.Warning">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:BControls.BCriticalMessage">
+<summary>
+BCriticalMessage
+</summary>
+</member>
+<member name="M:BControls.BCriticalMessage.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:BControls.BMessageBox">
+<summary>
+BMessageBox
+</summary>
+</member>
+<member name="M:BControls.BMessageBox.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>

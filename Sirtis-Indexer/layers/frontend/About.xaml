@@ -23,9 +23,11 @@
                 Sirtis Indexer
                 <LineBreak/>
                 <LineBreak/>
-                Read multiple files (json, yaml and Xml) and organize<LineBreak/> 
+                Read multiple files (json and yaml) and organize<LineBreak/> 
                 it's contents in a easy searchable flat indexed structure.<LineBreak/>
                 Can load multiple files types at the same time.<LineBreak/>
+                <LineBreak/>
+                (Soon xml support)
                 <LineBreak/>
                 <LineBreak/>
                 Support this project on <Hyperlink Name="hypGithub" NavigateUri="https://github.com/Kelvysb/Sirtis-Indexer" RequestNavigate="hypGithub_RequestNavigate">GitHub</Hyperlink> 

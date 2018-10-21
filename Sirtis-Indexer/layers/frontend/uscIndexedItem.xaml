@@ -41,9 +41,9 @@
                     <Label Name="lblModifiedIndicator" Content="" Style="{StaticResource stlLabelBase}" Margin="5,2,2,2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0" Grid.Column="2"/>
                 </Grid>
             </Grid>
-            <Button Name="btnInfo" Style="{StaticResource ButtonRoundStyle}" ToolTip="Info" Height="35" Grid.Column="4" Click="btnInfo_Click">
+            <Button Name="btnInfo" Style="{StaticResource ButtonRoundStyle}" ToolTip="Copy file path" Height="35" Grid.Column="4" Click="btnInfo_Click">
                 <Grid>
-                    <Image Source="/SirtisIndexer;component/Resources/info.png"/>
+                    <Image Source="/SirtisIndexer;component/Resources/copy.png"/>
                 </Grid>
             </Button>
         </Grid>
