@@ -1,2 +1,2 @@
-# yamlIndexer
-yaml Indexer with quick plain key search
+# Sirtis Indexer
+yaml, Xml and Json Indexer with quick plain key search

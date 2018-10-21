@@ -1,0 +1,126 @@
+﻿<Window x:Class="SirtisIndexer.MainWindow"      
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SirtisIndexer"
+        xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+        mc:Ignorable="d"
+        Title="Sirtis Indexer" MinHeight="450" MinWidth="800" Height="450" Width="800" Loaded="Window_Loaded" Icon="/SirtisIndexer;component/icon.ico" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Window.Resources>
+        <Storyboard x:Key="WaitStoryboard">
+            <DoubleAnimation
+                Storyboard.TargetName="loadingImage"
+                Storyboard.TargetProperty="(Image.RenderTransform).(RotateTransform.Angle)"
+                From="0"
+                To="360"
+                Duration="0:0:2"
+                RepeatBehavior="Forever"/>
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/SirtisIndexer;component/Resources/Background.png" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="UniformToFill" Grid.RowSpan="2" Margin="0,0,0,0" />
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btnOpen" Style="{StaticResource ButtonRoundStyle}" ToolTip="Open" Height="35" Grid.Column="0" Click="btnOpen_Click">
+                <Grid>
+                    <Image Source="/SirtisIndexer;component/Resources/open.png"/>
+                </Grid>
+            </Button>
+
+            <Button Name="btnSave" Style="{StaticResource ButtonRoundStyle}" ToolTip="Save Changes" Height="35" Grid.Column="1" Click="btnSave_Click">
+                <Grid>
+                    <Image Source="/SirtisIndexer;component/Resources/save.png"/>
+                </Grid>
+
+            </Button>
+            <Button Name="btnFilter" Style="{StaticResource ButtonRoundStyle}" ToolTip="Filter" Height="35" Grid.Column="2" Click="btnFilter_Click">
+                <Grid>
+                    <Image Source="/SirtisIndexer;component/Resources/filter.png"/>
+                </Grid>
+            </Button>
+
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Style="{StaticResource ButtonRoundRectangleStyle}" Margin="4">
+                        <Label Content="Flat:" Style="{StaticResource stlLabelBase}" Padding="0" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Border>
+                    <toolkit:AutoCompleteBox Name="txtFilter" Text="" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Style="{StaticResource stlautoTextBoxBase}" IsTextCompletionEnabled="True" FilterMode="StartsWith" Grid.Column="1" PreviewKeyDown="txtFilter_PreviewKeyDown"/>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Style="{StaticResource ButtonRoundRectangleStyle}" Margin="4" Grid.Column="0">
+                        <Label Content="Field:" Style="{StaticResource stlLabelBase}" Padding="0" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Border>
+                    <TextBox Name="txtFilterField" Text="" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Style="{StaticResource stlTextBoxBase}" Grid.Column="1" PreviewKeyDown="txtFilter_PreviewKeyDown"/>
+
+                    <Border Style="{StaticResource ButtonRoundRectangleStyle}" Margin="4" Grid.Column="2">
+                        <Label Content="File:" Style="{StaticResource stlLabelBase}" Padding="0" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Border>
+                    <TextBox Name="txtFilterFile" Text="" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Style="{StaticResource stlTextBoxBase}" Grid.Column="3" PreviewKeyDown="txtFilter_PreviewKeyDown"/>
+                    
+                    <CheckBox Name="chkModified" Content="Modified" Style="{StaticResource stlCheckboxBase}" Margin="5" Grid.Column="4" Checked="chkModified_Checked" />
+                </Grid>
+
+            </Grid>
+
+            <Button Name="btnCancel" Style="{StaticResource ButtonRoundStyle}" ToolTip="Clean" Height="35" Grid.Column="4" Click="btnCancel_Click">
+                <Grid>
+                    <Image Source="/SirtisIndexer;component/Resources/cancel.png"/>
+                </Grid>
+            </Button>
+            
+            <Button Name="btnAbout" Style="{StaticResource ButtonRoundStyle}" ToolTip="About" Height="35" Grid.Column="5" Click="btnAbout_Click">
+                <Grid>
+                    <Image Source="/SirtisIndexer;component/Resources/about.png"/>
+                </Grid>
+            </Button>
+
+
+        </Grid>
+
+        <Border Style="{StaticResource ButtonRoundRectangleStyle}" Margin="5" Grid.Row="1" Grid.RowSpan="2">
+            <ScrollViewer>
+                <StackPanel Name="stkItens" Margin="5">
+
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <Border Name="loading" Style="{StaticResource ButtonRoundRectangleStyle}" Margin="5" Grid.Row="1" Visibility="Collapsed" Grid.RowSpan="2">
+            <Image Name="loadingImage" Source="/SirtisIndexer;component/Resources/loading.png" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5, 0.5">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="0" />
+                </Image.RenderTransform>
+            </Image>
+        </Border>
+
+    </Grid>
+</Window>
