@@ -65,9 +65,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sirtis-Indexer\Sirtis-Indexer.csproj">
-      <Project>{69031DAC-48C7-4EC2-A5A6-0EFB500ABCA3}</Project>
-      <Name>Sirtis-Indexer</Name>
+    <ProjectReference Include="..\Sirtis-Core\Sirtis-Core.csproj">
+      <Project>{1258b001-6c10-4c91-b403-b70013dbf2ed}</Project>
+      <Name>Sirtis-Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

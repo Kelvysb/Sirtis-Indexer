@@ -111,12 +111,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="basic\Indexed.cs" />
-    <Compile Include="layers\backend\IIndexer.cs" />
-    <Compile Include="layers\backend\JsonIndexer.cs" />
-    <Compile Include="layers\backend\SirtisIndexerBO.cs" />
-    <Compile Include="layers\backend\XmlIndexer.cs" />
-    <Compile Include="layers\backend\YamlIndexer.cs" />
     <Compile Include="layers\frontend\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -136,7 +130,6 @@
     <Compile Include="layers\frontend\uscIndexedItem.xaml.cs">
       <DependentUpon>uscIndexedItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="layers\repository\repSirtisIndexer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -181,9 +174,7 @@
   <ItemGroup>
     <Resource Include="Resources\save.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SirtisIndexer\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="icon.ico" />
   </ItemGroup>
@@ -198,6 +189,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sirtis-Core\Sirtis-Core.csproj">
+      <Project>{1258b001-6c10-4c91-b403-b70013dbf2ed}</Project>
+      <Name>Sirtis-Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

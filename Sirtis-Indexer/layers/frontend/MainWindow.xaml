@@ -20,7 +20,7 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Image Source="/SirtisIndexer;component/Resources/Background.png" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="UniformToFill" Grid.RowSpan="2" Margin="0,0,0,0" />
@@ -56,6 +56,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
@@ -87,6 +88,17 @@
                     <TextBox Name="txtFilterFile" Text="" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Style="{StaticResource stlTextBoxBase}" Grid.Column="3" PreviewKeyDown="txtFilter_PreviewKeyDown"/>
                     
                     <CheckBox Name="chkModified" Content="Modified" Style="{StaticResource stlCheckboxBase}" Margin="5" Grid.Column="4" Checked="chkModified_Checked" />
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Style="{StaticResource ButtonRoundRectangleStyle}" Margin="4" Grid.Column="0">
+                        <Label Content="Value:" Style="{StaticResource stlLabelBase}" Padding="0" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Border>
+                    <TextBox Name="txtFilterValue" Text="" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Style="{StaticResource stlTextBoxBase}" Grid.Column="1" PreviewKeyDown="txtFilter_PreviewKeyDown"/>
                 </Grid>
 
             </Grid>
