@@ -55,9 +55,7 @@ namespace SirtisIndexer
     public partial class MainWindow : Window
     {
 
-        #region Declarations
-        private IndexedFolder objIndexedFolder;
-        private List<string> strAutoCompleteSource;
+        #region Declarations       
         private List<uscIndexedItem> objIndexedItens;
         bool blnLoaded;
         #endregion
@@ -80,7 +78,6 @@ namespace SirtisIndexer
                                       SirtisIndexerBO.Instance.WorkDirectory + "\\Log");
 
                 objIndexedItens = new List<uscIndexedItem>();
-                objIndexedFolder = null;
 
             }
             catch (Exception)
@@ -209,8 +206,7 @@ namespace SirtisIndexer
         {
             try
             {
-                strAutoCompleteSource = new List<string>();
-                txtFilter.ItemsSource = strAutoCompleteSource;
+                txtFilter.ItemsSource = new List<string>();
                 ((Storyboard)FindResource("WaitStoryboard")).Begin();
                 blnLoaded = true;
             }
@@ -238,7 +234,7 @@ namespace SirtisIndexer
                     SirtisIndexerBO.Instance.ProcessFolder(objdialog.FileName).ContinueWith((result) => {
                         Dispatcher.Invoke(() => 
                             {
-                                FolderLoaded(result.Result);
+                                FolderLoaded();
                             });
                     });
                 }
@@ -252,23 +248,17 @@ namespace SirtisIndexer
             }
         }
 
-        private void FolderLoaded(IndexedFolder p_objResult)
+        private void FolderLoaded()
         {
             try
             {
 
-
-                objIndexedFolder = p_objResult;
-
-                strAutoCompleteSource = (from IndexedItem item in objIndexedFolder.Itens
-                                                select item.Flat).ToList();
-
-                txtFilter.ItemsSource = strAutoCompleteSource;
+                txtFilter.ItemsSource = SirtisIndexerBO.Instance.AutoCompleteSource;
 
                 stkItens.Children.Clear();
                 objIndexedItens.Clear();
 
-                foreach (IndexedItem item in objIndexedFolder.Itens)
+                foreach (IndexedItem item in SirtisIndexerBO.Instance.IndexedFolder.Itens)
                 {
                     objIndexedItens.Add(new uscIndexedItem(item));
                     objIndexedItens.Last().Margin = new Thickness(2);
@@ -317,6 +307,12 @@ namespace SirtisIndexer
                         objFilteredResults.AddRange(objIndexedItens.FindAll(item => !item.Item.Flat.StartsWith(txtFilter.Text.Trim(), StringComparison.InvariantCultureIgnoreCase)));
                     }
 
+                    //Filter value
+                    if (txtFilterValue.Text.Trim() != "")
+                    {
+                        objFilteredResults.AddRange(objIndexedItens.FindAll(item => !item.Item.Value.Trim().ToUpper().Contains(txtFilterValue.Text.Trim().ToUpper())));
+                    }
+
                     //Filter field
                     if (txtFilterField.Text.Trim() != "")
                     {
@@ -348,7 +344,7 @@ namespace SirtisIndexer
             List<IndexedItem> objModificated;
             try
             {
-                objModificated = objIndexedFolder.Itens.FindAll((item) => { return item.Modified; });
+                objModificated =  SirtisIndexerBO.Instance.IndexedFolder.Itens.FindAll((item) => { return item.Modified; });
                 if(objModificated.Count > 0)
                 {
                     loading.Visibility = Visibility.Visible;

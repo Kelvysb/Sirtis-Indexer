@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirtis-Indexer", "Sirtis-In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirtis-IndexerTests", "Sirtis-IndexerTests\Sirtis-IndexerTests.csproj", "{E20CCA34-17CF-4513-8360-8311A2691A67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirtis-Core", "Sirtis-Core\Sirtis-Core.csproj", "{1258B001-6C10-4C91-B403-B70013DBF2ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirtis-Shell", "Sirtis-Shell\Sirtis-Shell.csproj", "{96645C8B-88A6-45C3-BFA2-A6291C8130BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{E20CCA34-17CF-4513-8360-8311A2691A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E20CCA34-17CF-4513-8360-8311A2691A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E20CCA34-17CF-4513-8360-8311A2691A67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1258B001-6C10-4C91-B403-B70013DBF2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1258B001-6C10-4C91-B403-B70013DBF2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1258B001-6C10-4C91-B403-B70013DBF2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1258B001-6C10-4C91-B403-B70013DBF2ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96645C8B-88A6-45C3-BFA2-A6291C8130BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96645C8B-88A6-45C3-BFA2-A6291C8130BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96645C8B-88A6-45C3-BFA2-A6291C8130BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96645C8B-88A6-45C3-BFA2-A6291C8130BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
